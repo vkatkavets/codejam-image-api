@@ -1,0 +1,349 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.cursor_paint {
+  cursor: url(./img/paint.png), auto;
+}
+
+.cursor_pencil {
+  cursor: url(./img/pencil.png), auto;
+}
+
+.cursor_choose {
+  cursor: url(./img/choose.png), auto;
+}
+
+.wrapper {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 30px;
+  width: 100%;
+  min-width: 1024px;
+  max-width: 1440px;
+}
+
+.header-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+}
+
+.header--button_before {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header--button_before::after {
+  content: url(img/header--button_before.png);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header--title {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.header--button_after {
+  position: relative;
+  width: 12px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header--button_after::after {
+  content: url(img/header--button_after.png);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main {
+  padding-top: 20px;
+}
+
+.block_tools,
+.block_colors {
+  position: absolute;
+  width: 225px;
+  color: #ffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
+}
+
+.block_switch {
+  position: absolute;
+  width: 225px;
+  right: 30px;
+  top: 0;
+}
+
+.block_tools--button,
+.block_colors--button,
+.block_switch--button {
+  position: relative;
+  padding: 0 0 0 70px;
+  width: 100%;
+  height: 50px;
+  font-family: 'Sarala', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  opacity: 0.9;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.block_tools--button:hover,
+.block_colors--button:hover,
+.block_switch--button:hover,
+.block_input--button:hover {
+  background-color: #cdcdcb;
+}
+
+.block_tools--button:focus,
+.block_colors--button:focus,
+.block_switch--button:focus {
+  background-color: #00bcd4;
+}
+
+.block_switch--button:focus {
+  outline: 0;
+}
+
+.block_tools {
+  left: 30px;
+}
+
+.button_paint::before {
+  content: url(img/button_paint.png);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+}
+
+.button_choose::before {
+  content: url(img/button_choose.png);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.button_choose .indicator {
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  border: 0.01em solid rgb(107, 147, 156);
+  z-index: 1;
+}
+
+.button_pencil::before {
+  content: url(img/button_pencil.png);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+}
+
+.button_transform::before {
+  content: url(img/button_transform.png);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translateY(-50%);
+}
+
+.block_tools .focus {
+  background-color: #00bcd4;
+}
+
+.block_colors {
+  top: 280px;
+  left: 30px;
+}
+
+.block_colors .block_colors--button {
+  opacity: 0.8;
+}
+
+.button_prev span,
+.button_red span,
+.button_blue span {
+  width: 19px;
+  height: 19px;
+  margin-right: 30px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+  background: lightgrey;
+  position: absolute;
+  top: 25%;
+  left: 25px;
+}
+
+.button_prev span {
+  background: #f8e539;
+}
+
+.button_red span {
+  background: #ff0000;
+}
+
+.button_blue span {
+  background: #7accf9;
+}
+
+.block_switch--button {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  padding: 0 20px;
+  border-radius: 5px;
+  background-color: red;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+.block_switch button:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.block_canvas {
+  margin: 0 auto;
+  width: 512px;
+}
+
+.block_input--button {
+  letter-spacing: 0.05em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  padding: 0 15px;
+  border-radius: 5px;
+  background-color: red;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.5);
+  height: 40px;
+  line-height: 24px;
+  color: rgb(0, 0, 0);
+  opacity: 0.9;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  outline: none;
+}
+#canvas {
+  box-shadow: 13px 17px 22px -7px rgba(52, 52, 52, 1);
+}
+
+/*--hr--*/
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+/*--button_current--*/
+.current_color {
+  display: none;
+}
+
+.current_color:focus {
+  outline: none;
+}
+
+.block_colors .button_current {
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+
+.block_colors--button label {
+  padding-left: 25px;
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.block_input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.block_input--input {
+  font-size: 110%;
+  width: 150px;
+  height: 35px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: #f9f0da;
+  outline: none;
+  position: relative;
+  transition: 0.3s linear;
+}
+
+.block_input--input:focus {
+  background: rgb(131, 210, 212);
+  width: 200px;
+}
+
+.block_colors--button-current {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  padding: 0;
+  background-color: red;
+}
+
+.block_input label {
+  margin-left: 2px;
+  color: #324b4e;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.button_bw {
+  background-color: black;
+  color: white;
+  margin-right: 0;
+}

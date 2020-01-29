@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Sarala&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Electrolize&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+    <title>CodeJam-Image-Api</title>
+</head>
+<body id="body" class="cursor_pencil">
+    <header class="header" id="color">
+        <div class="wrapper header-wrapper">
+            <button type="button" class="header--button_before"></button>
+            <a class="header--title" href="#">codejam-image-api</a>
+            <button type="button" class="header--button_after"></button>
+        </div>
+    </header>
+    <main class="main">
+        <div class="wrapper">
+            <section class="block_tools">
+                <button type="button" class="block_tools--button button_paint">Fill bucket</button>
+                <button type="button" class="block_tools--button button_choose">Choose color<span></span></button>
+                <button type="button" class="block_tools--button button_pencil">Pencil</button>
+                <button type="button" class="block_tools--button button_transform">Transform</button>
+            </section>
+            <section class="block_colors">
+                <div class="block_colors--button button_current">
+                    <span class="block_colors--button-current"></span>
+                    <input type="color" class="current_color" id="input_color" value="#1EA63D">
+                    <label for="input_color">Current color</label>
+                </div>
+                <button type="button" class="block_colors--button button_prev"><span></span>Prev color</button>
+                <hr>
+                <button type="button" class="block_colors--button button_red"><span></span>Red</button>
+                <button type="button" class="block_colors--button button_blue"><span></span>Blue</button>
+            </section>
+            <section class="block_canvas">
+                <div class="block_input">
+                    <button type="button" id="btn-image" class="block_input--button">Load</button>
+                    <div>
+                        <input class="block_input--input" id="input" type="text" value="Minsk" required>
+                        <label for="input">&#128269;</label>
+                    </div>
+                    <button type="button" id="btn-bw" class="block_input--button button_bw">B&W</button>
+                </div>
+                <canvas width="512" height="512" id="canvas"></canvas>
+            </section>
+            <section class="block_switch">
+                <button type="button" id="btn-4" class="block_switch--button button_4x4">4x4</button>
+                <button type="button" id="save" class="block_switch--button">Save</button>
+                <button type="button" id="reset" class="block_switch--button">Clear</button>
+            </section>
+        </div>    
+    </main>
+    <script src="script.js"></script> 
+</body>
+</html>
